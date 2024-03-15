@@ -10,4 +10,5 @@ namespace Domain.Entity;
         public string Email {get; set;}
         public string Password {get; set;}
         public virtual ICollection<Rol> Roles {get; set;}
+        public ICollection<UsuarioRol> UsuarioRols {get; set;}
     }

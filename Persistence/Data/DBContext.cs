@@ -4,7 +4,7 @@ using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Data;
-public class DBContext(DbContextOptions<DbContext> options) : DbContext(options)
+public class DBContext(DbContextOptions<DBContext> options) : DbContext(options)
 {
     public DbSet<Producto> Productos {get; set;}
     public DbSet<Rol> Roles {get; set;}

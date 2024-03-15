@@ -16,5 +16,8 @@ public class ProductoConfiguration : IEntityTypeConfiguration<Producto>
         .IsRequired();
         builder.Property(e => e.Cantidad)
         .IsRequired();
+        builder.HasOne(e => e.Tipo)
+        .WithMany(e => e.Productos)
+        .HasForeignKey(e => e.IdTipoFk);
     }
 }
