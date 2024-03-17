@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Persistence.Data;
 using MVC.Extension;
+using System.Reflection;
+using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.ServieBinder();
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 builder.Services.AddDbContext<DBContext>(options => {
     string conexion = builder.Configuration.GetConnectionString("SqlServerConn");
     options.UseSqlServer(conexion);

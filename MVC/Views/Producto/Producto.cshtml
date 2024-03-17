@@ -1,23 +1,30 @@
-@model MVC.Helpers.Pager<Domain.Entity.Producto>
+@model MVC.Helpers.Pager<MVC.Models.ProductoDto>
 @{
     ViewData["Title"] = "Producto";
 }
 
 <h1>@ViewData["Title"]</h1>
-
-<div class="container">
+<div class="container show">
+    <a id="button" asp-controller="Producto" asp-action="SavePage" class="btn btn-primary">Guardar</a>
     <table class="table">
         <tr>
-            <th>Id</th>
             <th>Nombre</th>
             <th>Precio</th>
         </tr>
-        @foreach(var a in @Model.Registers ){
-        <tr>
-            <td>@a.Id</td>
-            <td>@a.Nombre</td>
-            <td>@a.Precio</td>
-        </tr>
-        }    
+        @foreach (var a in @Model.Registers)
+        {
+            <tr>
+                <td>@a.Nombre</td>
+                <td>@a.Precio</td>
+            </tr>
+        }
     </table>
+    @if (Model.HasPreviousPage)
+    {
+        <button>Atras</button>
+    }
+    else if (Model.HasNextPage)
+    {
+        <button>Adelante</button>
+    }
 </div>

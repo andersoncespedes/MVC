@@ -26,6 +26,11 @@ body{
     border:none;
     padding:6px;
     height: 50px;
+    transition: 300ms all ease;
+}
+.button-sland button:hover{
+    background-color:white;
+    color:black;
 }
 .showcase-title{
     color:white;
@@ -35,24 +40,29 @@ body{
 .img-p{
     width: 100%;
 }
+.img-p img::after{
+    background:red;
+    width: 100%;
+    height: 100%;
+    
+}
 .buscar-d{
     border: none;
     height:3.5em;
     border-radius: 50px;
     padding: 10px;
 }
-.showcase::before{
-
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Color blanco con 50% de opacidad */
-    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido del elemento */
-
+.cont-img-body{
+    padding: 0.5rem;
 }
 .cont-p img{
-    border-radius:20px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+
+}
+.cont-p{
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    box-shadow:0 0 5px black;
+    border: 4px solid outset black;
 }
