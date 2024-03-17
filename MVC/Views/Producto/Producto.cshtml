@@ -1,0 +1,23 @@
+@model MVC.Helpers.Pager<Domain.Entity.Producto>
+@{
+    ViewData["Title"] = "Producto";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+        @foreach(var a in @Model.Registers ){
+        <tr>
+            <td>@a.Id</td>
+            <td>@a.Nombre</td>
+            <td>@a.Precio</td>
+        </tr>
+        }    
+    </table>
+</div>

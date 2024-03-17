@@ -141,3 +141,5 @@ C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\bin\Debug\net8.0\ru\Micr
 C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\obj\Debug\net8.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
+C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\obj\Debug\net8.0\scopedcss\Views\Producto\Producto.cshtml.rz.scp.css

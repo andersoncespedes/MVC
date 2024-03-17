@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\ander\\OneDrive\\Documentos\\Proyectos C#\\Mvc\\MVC\\wwwroot\\Font\\coolvetica compressed hv.otf",
+      "PackagePath": "staticwebassets\\Font\\coolvetica compressed hv.otf"
+    },
+    {
+      "Id": "C:\\Users\\ander\\OneDrive\\Documentos\\Proyectos C#\\Mvc\\MVC\\wwwroot\\Font\\coolvetica condensed rg.otf",
+      "PackagePath": "staticwebassets\\Font\\coolvetica condensed rg.otf"
+    },
+    {
+      "Id": "C:\\Users\\ander\\OneDrive\\Documentos\\Proyectos C#\\Mvc\\MVC\\wwwroot\\Font\\coolvetica crammed rg.otf",
+      "PackagePath": "staticwebassets\\Font\\coolvetica crammed rg.otf"
+    },
+    {
+      "Id": "C:\\Users\\ander\\OneDrive\\Documentos\\Proyectos C#\\Mvc\\MVC\\wwwroot\\Font\\coolvetica rg it.otf",
+      "PackagePath": "staticwebassets\\Font\\coolvetica rg it.otf"
+    },
+    {
+      "Id": "C:\\Users\\ander\\OneDrive\\Documentos\\Proyectos C#\\Mvc\\MVC\\wwwroot\\Font\\coolvetica rg.otf",
+      "PackagePath": "staticwebassets\\Font\\coolvetica rg.otf"
+    },
+    {
       "Id": "C:\\Users\\ander\\OneDrive\\Documentos\\Proyectos C#\\Mvc\\MVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

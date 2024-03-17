@@ -10,4 +10,5 @@ public interface IUnitOfWork
     IRol Roles{get;}
     ITipo Tipos {get;}
     IUsuario Usuarios {get;}
+    Task<int> SaveAsync();
 }

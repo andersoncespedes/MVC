@@ -7,10 +7,9 @@ a.navbar-brand[b-q0a04yuu0e] {
   word-break: break-all;
 }
 
-a[b-q0a04yuu0e] {
-  color: #0077cc;
+body[b-q0a04yuu0e]{
+  background-color: #9f9d9d;
 }
-
 .btn-primary[b-q0a04yuu0e] {
   color: #fff;
   background-color: #1b6ec2;
@@ -33,7 +32,15 @@ a[b-q0a04yuu0e] {
 .box-shadow[b-q0a04yuu0e] {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
-
+header nav[b-q0a04yuu0e]{
+  background-color:white;
+  border-bottom: 2px inset black;
+}
+header nav ul li[b-q0a04yuu0e]{
+  display: inline-flex;
+  color: black;
+  
+}
 button.accept-policy[b-q0a04yuu0e] {
   font-size: 1rem;
   line-height: inherit;

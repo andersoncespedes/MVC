@@ -1,0 +1,58 @@
+@font-face{
+    src:url("./../../wwwroot/Font/coolvetica compressed hv.otf");
+    font-family:'Principal';
+}
+body[b-290qwq6xov]{
+    font-family: 'Principal' format('truetype');;
+}
+.showcase[b-290qwq6xov]
+{
+    background-image:url("https://wallpapers.com/images/hd/silhouette-of-landscape-fondos-de-pantalla-o7laa9cz8zah3k35.jpg");
+    min-height:400px;
+    width:100%;
+    background-size: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow:0 4px 10px  black;
+    border-bottom: 2px black inset ;
+}
+.showcase .showcase-container[b-290qwq6xov]{
+    padding:20px;
+}
+.button-sland button[b-290qwq6xov]{
+    background:rgba(0,0,0,0.4);
+    color:white;
+    border-radius:50px;
+    border:none;
+    padding:6px;
+    height: 50px;
+}
+.showcase-title[b-290qwq6xov]{
+    color:white;
+    margin-top:20px;
+    flex-wrap:nowrap;
+}
+.img-p[b-290qwq6xov]{
+    width: 100%;
+}
+.buscar-d[b-290qwq6xov]{
+    border: none;
+    height:3.5em;
+    border-radius: 50px;
+    padding: 10px;
+}
+.showcase[b-290qwq6xov]::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Color blanco con 50% de opacidad */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido del elemento */
+
+}
+.cont-p img[b-290qwq6xov]{
+    border-radius:20px;
+}

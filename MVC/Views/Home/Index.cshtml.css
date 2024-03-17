@@ -1,0 +1,58 @@
+@font-face{
+    src:url("./../../wwwroot/Font/coolvetica compressed hv.otf");
+    font-family:'Principal';
+}
+body{
+    font-family: 'Principal' format('truetype');;
+}
+.showcase
+{
+    background-image:url("https://wallpapers.com/images/hd/silhouette-of-landscape-fondos-de-pantalla-o7laa9cz8zah3k35.jpg");
+    min-height:400px;
+    width:100%;
+    background-size: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow:0 4px 10px  black;
+    border-bottom: 2px black inset ;
+}
+.showcase .showcase-container{
+    padding:20px;
+}
+.button-sland button{
+    background:rgba(0,0,0,0.4);
+    color:white;
+    border-radius:50px;
+    border:none;
+    padding:6px;
+    height: 50px;
+}
+.showcase-title{
+    color:white;
+    margin-top:20px;
+    flex-wrap:nowrap;
+}
+.img-p{
+    width: 100%;
+}
+.buscar-d{
+    border: none;
+    height:3.5em;
+    border-radius: 50px;
+    padding: 10px;
+}
+.showcase::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Color blanco con 50% de opacidad */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido del elemento */
+
+}
+.cont-p img{
+    border-radius:20px;
+}
