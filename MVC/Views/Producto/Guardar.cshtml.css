@@ -1,0 +1,9 @@
+.main-form{
+    display: flex;
+    height: 100vh;
+}
+.cont-form{
+    width: 50%;
+    margin-top: 5;
+    margin: auto;
+}

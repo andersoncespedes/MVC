@@ -1,1 +1,34 @@
-jsdjkadshjakshd
+@model IEnumerable<Domain.Entity.Tipo>
+    <div class="main-form">
+        <div class="cont-form">
+        @using (@Html.BeginForm("Save", "Producto", FormMethod.Post, new {@id = "form"}))
+            {
+                <input type="text" name="Nombre">
+                <input type="number" name="Cantidad">
+                <input type="number" name="Precio">
+                @Html.DropDownList("IdTipoFk", new SelectList(Model, "Id", "Nombre"), "--- Selecccione ---", new { @class = "form-control", @id = "Selecc"}  )
+                <input type="submit">
+            }
+        </div>
+        
+    </div>
+
+<script>
+    let Form = document.getElementById("form");
+    function ValidarNombre(e){
+       return e.Nombre.value.match(/[0-9]/gi) || e.Nombre.value.length < 4
+    }
+    Form.addEventListener("submit", function(e){
+        e.preventDefault();
+        console.log()
+        if(this.IdTipoFk.value == "" || ValidarNombre(this)){
+            console.log("hola")
+            return false;
+        }
+        else{
+            console.log("hola1")
+
+            return this.submit();
+        }
+    })
+</script>

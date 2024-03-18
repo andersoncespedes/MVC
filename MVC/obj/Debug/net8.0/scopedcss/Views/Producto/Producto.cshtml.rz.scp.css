@@ -1,5 +1,13 @@
 .show[b-5wyu2a2wre]{
-    background-color: red;
     padding: 1.5rem;
     border-radius: 20px;
+}
+table[b-5wyu2a2wre]{
+    background-color: white;
+    margin-top: 6px;
+    box-shadow: 4px 5px 5px black;
+    border: 4px inset black;
+}
+.table tr th[b-5wyu2a2wre], td[b-5wyu2a2wre]{
+    text-align: center;
 }

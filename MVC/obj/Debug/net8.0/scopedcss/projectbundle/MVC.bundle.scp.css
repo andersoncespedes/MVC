@@ -4,7 +4,7 @@
     font-family:'Principal';
 }
 body[b-290qwq6xov]{
-    font-family: 'Principal' format('truetype');;
+    font-family: 'Principal' format('truetype');
 }
 .showcase[b-290qwq6xov]
 {
@@ -16,6 +16,11 @@ body[b-290qwq6xov]{
     z-index: 1;
     box-shadow:0 4px 10px  black;
     border-bottom: 2px black inset ;
+}
+.showcase[b-290qwq6xov]::before{
+    z-index: -1;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .showcase .showcase-container[b-290qwq6xov]{
     padding:20px;
@@ -54,24 +59,48 @@ body[b-290qwq6xov]{
     padding: 10px;
 }
 .cont-img-body[b-290qwq6xov]{
+    text-align: center;
     padding: 0.5rem;
+
 }
 .cont-p img[b-290qwq6xov]{
     border-top-left-radius:10px;
     border-top-right-radius:10px;
-
+}
+hr[b-290qwq6xov]{
+    background: linear-gradient(to right, rgb(247, 62, 62), blue, black);
+    height: 0.2rem;
 }
 .cont-p[b-290qwq6xov]{
     border-top-left-radius:10px;
     border-top-right-radius:10px;
     box-shadow:0 0 5px black;
-    border: 4px solid outset black;
+    border: 4px solid inset black;
+    background-color: white;
+}
+/* _content/MVC/Views/Producto/Guardar.cshtml.rz.scp.css */
+.main-form[b-dtrvlnleww]{
+    display: flex;
+    height: 100vh;
+}
+.cont-form[b-dtrvlnleww]{
+    width: 50%;
+    margin-top: 5;
+    margin: auto;
 }
 /* _content/MVC/Views/Producto/Producto.cshtml.rz.scp.css */
 .show[b-5wyu2a2wre]{
-    background-color: red;
     padding: 1.5rem;
     border-radius: 20px;
+}
+table[b-5wyu2a2wre]{
+    background-color: white;
+    margin-top: 6px;
+    box-shadow: 4px 5px 5px black;
+    border: 4px inset black;
+}
+.table tr th[b-5wyu2a2wre], td[b-5wyu2a2wre]{
+    text-align: center;
 }
 /* _content/MVC/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
@@ -83,8 +112,8 @@ a.navbar-brand[b-q0a04yuu0e] {
   word-break: break-all;
 }
 
-body[b-q0a04yuu0e]{
-  background-color: #9f9d9d;
+main[b-q0a04yuu0e]{
+  background-color: #e0e0e0;
 }
 .btn-primary[b-q0a04yuu0e] {
   color: #fff;

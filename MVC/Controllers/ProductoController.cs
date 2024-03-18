@@ -5,6 +5,8 @@ using Domain.Interface;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
 using AutoMapper;
+using System.Security.Cryptography;
+using System.Diagnostics;
 
 namespace MVC.Controllers;
 public class ProductoController : Controller
@@ -24,7 +26,27 @@ public class ProductoController : Controller
         var map = _mapper.Map<List<ProductoDto>>(labs.registros);
         return View("Producto", new Pager<ProductoDto>(map, labs.totalRegistros, Params.PageIndex, Params.PageSize, Params.Search));
     }
-    public IActionResult SavePage(){
-        return View("Guardar");
+    public async Task<IActionResult> SavePage(){
+        IEnumerable<Tipo> lista = await _unitOfWork.Tipos.GetAll();
+        return View("Guardar", lista);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Save( ProductoDto entity){
+        Producto producto = _mapper.Map<Producto>(entity);
+        byte[] salt = RandomNumberGenerator.GetBytes(9);
+        producto.Codigo = Convert.ToBase64String(salt);
+        _unitOfWork.Productos.Add(producto);
+        await _unitOfWork.SaveAsync();
+        return Redirect("Index");
+    }
+    [HttpPost]
+    public async Task<IActionResult> Delete(int id){
+        Producto producto = await _unitOfWork.Productos.GetById(id);
+        if(producto == null){
+            return BadRequest();
+        }
+        _unitOfWork.Productos.Remove(producto);
+        await _unitOfWork.SaveAsync();
+        return Redirect("../Index");
     }
 }

@@ -40,6 +40,7 @@ public class GenericRepository<T>(DBContext Context) : IGenericRepository<T> whe
         var registros = await _context.Set<T>()
             .Skip((pageIndex - 1) * pageSize)
             .Take(pageSize)
+            .OrderByDescending(e => e.Id)
             .ToListAsync();
         return (totalRegistros, registros);
     }
