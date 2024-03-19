@@ -26,10 +26,14 @@
                     <td>@a.Codigo</td>
                     <td>@a.Precio</td>
                     <td>@a.Cantidad</td>
-                    <td>
+                    <td class="d-flex justify-content-center align-items-center">
                         @using(Html.BeginForm("Delete", "Producto", new {id = @a.Id}, FormMethod.Post)){
                             @Html.AntiForgeryToken()
                             <input type="submit" value="Eliminar" class="btn btn-danger"> 
+                        }
+                        @using(Html.BeginForm("Update", "Producto", new {id = @a.Id}, FormMethod.Post)){
+                            @Html.AntiForgeryToken()
+                            <input type="submit" value="Editar" class="btn btn-success">
                         }
                     </td>
                 </tr>

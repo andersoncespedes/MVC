@@ -68,7 +68,7 @@ body[b-290qwq6xov]{
     border-top-right-radius:10px;
 }
 hr[b-290qwq6xov]{
-    background: linear-gradient(to right, rgb(247, 62, 62), blue, black);
+    background: linear-gradient(to right, rgb(255, 255, 255), blue, rgb(255, 255, 255));
     height: 0.2rem;
 }
 .cont-p[b-290qwq6xov]{
@@ -77,6 +77,27 @@ hr[b-290qwq6xov]{
     box-shadow:0 0 5px black;
     border: 4px solid inset black;
     background-color: white;
+}
+.cont-a img[data-id="1"][b-290qwq6xov], .cont-a img[data-id="3"][b-290qwq6xov]{
+    box-shadow: 0 4px 6px black;
+    border-radius: 20px;
+    
+}
+.cont-a img[data-id="2"][b-290qwq6xov]{
+    box-shadow: 0 4px 6px black;
+    border-radius: 20px;
+}
+.cont-a[b-290qwq6xov]{
+    padding: 30px;
+}
+.cont-a img[data-id="1"][b-290qwq6xov]{
+    transform: skew(-19deg); 
+    border-bottom-left-radius: 100px;
+}
+.cont-a img[data-id="3"][b-290qwq6xov]{
+    transform: skew(19deg); 
+    border-bottom-right-radius: 100px;
+
 }
 /* _content/MVC/Views/Producto/Guardar.cshtml.rz.scp.css */
 .main-form[b-dtrvlnleww]{

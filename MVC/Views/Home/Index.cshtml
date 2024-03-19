@@ -40,7 +40,7 @@
     <div class="d-flex">
         <div class="flex-grow-1 w-25 m-2  cont-p">
             <div class="img-p">
-                <img style="width: 100%; height:200px;"
+                <img  class="lazy-load"  style="width: 100%; height:200px;"
                     src="https://w.forfun.com/fetch/ae/ae6453110a3418fe16b993ef7eb3442b.jpeg">
             </div> <br>
             <center>
@@ -54,7 +54,7 @@
         </div>
         <div class="flex-grow-1 m-2 w-25 cont-p">
             <div class="img-p">
-                <img style="width: 100%; height:200px;"
+                <img  class="lazy-load"  style="width: 100%; height:200px;"
                     src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D">
             </div>
              <br>
@@ -68,7 +68,7 @@
         </div>
         <div class="flex-grow-1 m-2 w-25 cont-p">
             <div class="img-p">
-                <img style="max-width: 100%; height:200px;"
+                <img  class="lazy-load"  style="max-width: 100%; height:200px;"
                     src="https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2018/06/fondos-de-pantalla-naturaleza.jpg">
             </div>
              <br>
@@ -82,7 +82,7 @@
         </div>
         <div class="flex-grow-1 m-2 w-25 cont-p">
             <div class="img-p">
-                <img style="width: 100%; height:200px;"
+                <img  class="lazy-load"  style="width: 100%; height:200px;"
                     src="https://p4.wallpaperbetter.com/wallpaper/66/161/265/nature-maligne-lake-island-mountains-wallpaper-preview.jpg">
             </div>
              <br>
@@ -94,10 +94,61 @@
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis debitis architecto, sint illo vel molestias itaque laborum facere sapiente unde ducimus id neque perferendis cum. Doloribus repellendus qui consequuntur tenetur.
             </div>
         </div>
-    </div>
-    <div class="paramos d-flex">
-        <div class="w-35 flex-grow">
-            <img src="" alt="">
+    </div> 
+     <center>
+            <h3>Galeria De Imagenes</h3>
+            <hr>
+    </center>
+    <div class="paramos d-flex flex-wrap">
+        <div class="flex-grow w-25 cont-a">
+             <img class="lazy-load" data-id="3" style="width:100%;height:300px"
+                src="https://i.pinimg.com/564x/7d/8d/83/7d8d83bcd31c04c0081900af2f2b8954.jpg" alt="">
         </div>
+        <div class="flex-grow w-50 cont-a">
+            <img  class="lazy-load"  data-id="2" style="width:100%;height:300px"
+            src="https://i.pinimg.com/564x/74/ca/f7/74caf733602726f800dbe0f5246e2e3b.jpg" alt="">
+        </div>
+        <div class="flex-grow w-25 cont-a">
+            <img  class="lazy-load"  data-id="1" style="width:100%;height:300px"
+                src="https://i.pinimg.com/564x/84/7f/e9/847fe98af13d049a78bf28738ea6e166.jpg" alt="">
+        </div>
+        <div class="d-flex w-100">
+            <div class="w-25 flex-grow cont-a m-2">
+                <img  class="lazy-load"  data-id="1" style="width:100%;height:300px"
+                src="https://i.pinimg.com/564x/26/c5/21/26c521930dd73c0bf8a8675b08698b51.jpg" alt="">
+            </div>
+            <div class="w-50 flex-grow cont-a m-2">
+                <img  class="lazy-load"  data-id="2"  style="width:100%;height:300px"
+                src="https://i.pinimg.com/564x/b7/14/f2/b714f2573fa94afc4fa02a1d8843f095.jpg" alt="">
+            </div>
+            <div class="w-25 flex-grow cont-a m-2">
+                <img class="lazy-load" data-id="3" style="width:100%;height:300px"
+                src="https://i.pinimg.com/236x/6d/dd/1d/6ddd1d05c52e656575df0d89a5149c38.jpg" alt="">
+            </div>    
+        </div>
+        
     </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
+  
+  function lazyLoad() {
+    lazyImages.forEach(function(image) {
+      if (image.getBoundingClientRect().top <= window.innerHeight && image.getBoundingClientRect().bottom >= 0) {
+        image.src = image.dataset.src;
+        image.classList.remove("lazy-load");
+        lazyImages = lazyImages.filter(function(img) {
+          return img !== image;
+        });
+      }
+    });
+    if (lazyImages.length === 0) {
+      document.removeEventListener("scroll", lazyLoad);
+      window.removeEventListener("resize", lazyLoad);
+      window.removeEventListener("orientationchange", lazyLoad);
+    }
+  }
+
+});
+</script>

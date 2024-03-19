@@ -9,7 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.ServieBinder();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 builder.Services.AddDbContext<DBContext>(options => {
-    string conexion = builder.Configuration.GetConnectionString("SqlServerConn");
+    string ? conexion = builder.Configuration.GetConnectionString("SqlServerConn");
     options.UseSqlServer(conexion);
 });
 var app = builder.Build();

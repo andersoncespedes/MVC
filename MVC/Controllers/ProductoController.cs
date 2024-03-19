@@ -43,7 +43,7 @@ public class ProductoController : Controller
     public async Task<IActionResult> Delete(int id){
         Producto producto = await _unitOfWork.Productos.GetById(id);
         if(producto == null){
-            return BadRequest();
+            return View("Index");
         }
         _unitOfWork.Productos.Remove(producto);
         await _unitOfWork.SaveAsync();
