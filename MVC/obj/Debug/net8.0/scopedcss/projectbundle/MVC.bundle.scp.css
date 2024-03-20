@@ -90,6 +90,9 @@ hr[b-290qwq6xov]{
 .cont-a[b-290qwq6xov]{
     padding: 30px;
 }
+.cont-a img[b-290qwq6xov]{
+    transition: 300ms all ease;
+}
 .cont-a img[data-id="1"][b-290qwq6xov]{
     transform: skew(-19deg); 
     border-bottom-left-radius: 100px;
@@ -97,7 +100,9 @@ hr[b-290qwq6xov]{
 .cont-a img[data-id="3"][b-290qwq6xov]{
     transform: skew(19deg); 
     border-bottom-right-radius: 100px;
-
+}
+.cont-a img:hover[b-290qwq6xov]{
+    cursor: pointer;
 }
 /* _content/MVC/Views/Producto/Guardar.cshtml.rz.scp.css */
 .main-form[b-dtrvlnleww]{
@@ -123,6 +128,7 @@ table[b-5wyu2a2wre]{
 .table tr th[b-5wyu2a2wre], td[b-5wyu2a2wre]{
     text-align: center;
 }
+/* _content/MVC/Views/Producto/Update.cshtml.rz.scp.css */
 /* _content/MVC/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

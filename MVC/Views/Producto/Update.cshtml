@@ -1,5 +1,7 @@
-@model IEnumerable<Tipo> 
-<div class="main-form">
+@model UpdateListDto
+
+<div>
+    <div class="main-form">
     <div class="cont-form card  rounded-3">
         <div class="card-header text-center p-3">
             <h2>Guardar Producto</h2>
@@ -10,22 +12,22 @@
             {
                 <div class="form-group col-md-6">
                     <label for="Nombre">Nombre</label>
-                    <input type="text" name="Nombre" class="form-control" placeholder="Nombre">
+                    <input type="text" name="Nombre" class="form-control" placeholder="Nombre" value="@Model.Producto.Nombre"> 
                 </div>
                 <div class="form-group col-md-6">
                     <label for="Cantidad">Cantidad</label>
-                    <input type="number" name="Cantidad" class="form-control" placeholder="Cantidad">
+                    <input type="number" name="Cantidad" class="form-control" placeholder="Cantidad" value="@Model.Producto.Cantidad">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="Precio">Precio</label>
-                    <input type="number" name="Precio" class="form-control" placeholder="Precio">
+                    <input type="number" name="Precio" class="form-control" placeholder="Precio" value="@Model.Producto.Precio">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="IdTipoFk">Tipo de Produto</label>
-                    @Html.DropDownList("IdTipoFk", new SelectList(Model, "Id", "Nombre"), "--- Selecccione ---", new
+                    @Html.DropDownList("IdTipoFk", new SelectList(Model.Tipos, "Id", "Nombre", Model.Producto.IdTipoFk), "--- Selecccione ---", new
                         {
                             @class = "form-control",
-                            @id = "Selecc"
+                            @id = "Selecc",
                         })
                 </div>
                     <input type="submit" class="btn btn-success" value="Guardar">
@@ -35,23 +37,4 @@
     </div>
 
 </div>
-
-<script>
-    let Form = document.getElementById("form");
-    function ValidarNombre(e) {
-        return e.Nombre.value.match(/[0-9]/gi) || e.Nombre.value.length < 4
-    }
-    Form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        console.log()
-        if (this.IdTipoFk.value == "" || ValidarNombre(this)) {
-            console.log("hola")
-            return false;
-        }
-        else {
-            console.log("hola1")
-
-            return this.submit();
-        }
-    })
-</script>
+</div>

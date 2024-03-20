@@ -89,6 +89,9 @@ hr[b-290qwq6xov]{
 .cont-a[b-290qwq6xov]{
     padding: 30px;
 }
+.cont-a img[b-290qwq6xov]{
+    transition: 300ms all ease;
+}
 .cont-a img[data-id="1"][b-290qwq6xov]{
     transform: skew(-19deg); 
     border-bottom-left-radius: 100px;
@@ -96,5 +99,7 @@ hr[b-290qwq6xov]{
 .cont-a img[data-id="3"][b-290qwq6xov]{
     transform: skew(19deg); 
     border-bottom-right-radius: 100px;
-
+}
+.cont-a img:hover[b-290qwq6xov]{
+    cursor: pointer;
 }

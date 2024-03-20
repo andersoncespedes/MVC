@@ -6,7 +6,7 @@ using Application.Repository;
 using Domain.Interface;
 using Persistence.Data;
 namespace Application.UnitOfWork;
-public class UnitOfWorks(DBContext context) : IUnitOfWork, IDisposable
+public class UnitOfWorks(DBContext context) : IUnitOfWork
 {
     private IProducto _producto;
     private IRol _rol;

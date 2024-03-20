@@ -89,6 +89,9 @@ hr{
 .cont-a{
     padding: 30px;
 }
+.cont-a img{
+    transition: 300ms all ease;
+}
 .cont-a img[data-id="1"]{
     transform: skew(-19deg); 
     border-bottom-left-radius: 100px;
@@ -96,5 +99,7 @@ hr{
 .cont-a img[data-id="3"]{
     transform: skew(19deg); 
     border-bottom-right-radius: 100px;
-
+}
+.cont-a img:hover{
+    cursor: pointer;
 }

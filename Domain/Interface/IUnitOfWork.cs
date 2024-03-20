@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Domain.Interface;
-public interface IUnitOfWork
+public interface IUnitOfWork : IDisposable
 {
     IProducto Productos {get;}
     IRol Roles{get;}

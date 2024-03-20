@@ -1,4 +1,4 @@
-@model MVC.Helpers.Pager<MVC.Models.ProductoDto>
+@model MVC.Helpers.Pager<ProductoDto>
 @{
     ViewData["Title"] = "Producto";
 }
@@ -31,7 +31,7 @@
                             @Html.AntiForgeryToken()
                             <input type="submit" value="Eliminar" class="btn btn-danger"> 
                         }
-                        @using(Html.BeginForm("Update", "Producto", new {id = @a.Id}, FormMethod.Post)){
+                        @using(Html.BeginForm("Store", "Producto", new {id = @a.Id}, FormMethod.Post)){
                             @Html.AntiForgeryToken()
                             <input type="submit" value="Editar" class="btn btn-success">
                         }
