@@ -146,3 +146,4 @@ C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\obj\Debug\net8.0\scopedc
 C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\obj\Debug\net8.0\scopedcss\Views\Producto\Guardar.cshtml.rz.scp.css
 C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\obj\Debug\net8.0\scopedcss\Views\Producto\Update.cshtml.rz.scp.css
+C:\Users\ander\OneDrive\Documentos\Proyectos C#\Mvc\MVC\obj\Debug\net8.0\scopedcss\Views\User\Register.cshtml.rz.scp.css

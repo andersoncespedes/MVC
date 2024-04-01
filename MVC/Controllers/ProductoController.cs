@@ -20,9 +20,10 @@ public class ProductoController : Controller
         _logger = logger;
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+
     }
     public async Task<IActionResult> Index([FromQuery] Params Params){
-        _logger.LogInformation("Buscando...");
+        
         var labs = await _unitOfWork.Productos.Paginacion(Params.PageIndex, Params.PageSize, Params.Search);
         var map = _mapper.Map<List<ProductoDto>>(labs.registros);
         return View("Producto", new Pager<ProductoDto>(map, labs.totalRegistros, Params.PageIndex, Params.PageSize, Params.Search));

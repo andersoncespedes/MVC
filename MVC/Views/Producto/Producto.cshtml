@@ -43,10 +43,10 @@
     </table>
     @if (Model.HasPreviousPage)
     {
-        <button>Atras</button>
+        <a href=@Url.Action("Index", new {PageIndex=@Model.PageIndex - 1 }) >Atras</a>
     }
     else if (Model.HasNextPage)
     {
-        <button>Adelante</button>
+        <a href=@Url.Action("Index", new {PageIndex=@Model.PageIndex + 1}) >Siguiente</a>
     }
 </div>
