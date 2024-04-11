@@ -13,5 +13,6 @@ public static class AppServiceProvider
         service.AddScoped<IUnitOfWork, UnitOfWorks>();
         service.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
         service.AddScoped<IUserService, UserService>();
+        service.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
     }
 }

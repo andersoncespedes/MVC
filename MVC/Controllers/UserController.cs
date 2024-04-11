@@ -18,11 +18,18 @@ public class UserController : Controller
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<string> Register([FromBody] RegisterDto register )
+    public async Task<IActionResult> Register(RegisterDto register )
     {
-        return await _service.RegisterUser(register);
+        await _service.RegisterUser(register);
+        return RedirectToAction("Index", "Producto");
     }
     public async Task<IActionResult> RegisterView(){
+        
+        return View("Register", null);
+    }
+     public async Task<IActionResult> Login(LoginDto login)
+     {
+        string validacion = await _service.Login(login);
         return View("Register", null);
     }
 

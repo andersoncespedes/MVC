@@ -3,6 +3,7 @@ using Persistence.Data;
 using MVC.Extension;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication.Cookies;
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -11,6 +12,12 @@ builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 builder.Services.AddDbContext<DBContext>(options => {
     string ? conexion = builder.Configuration.GetConnectionString("SqlServerConn");
     options.UseSqlServer(conexion);
+});
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+.AddCookie(options => {
+    options.LoginPath = "/User/Login";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 });
 var app = builder.Build();
 
@@ -24,7 +31,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseAuthentication();
 app.UseRouting();
 
 app.UseAuthorization();

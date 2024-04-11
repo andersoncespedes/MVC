@@ -8,4 +8,5 @@ namespace MVC.Services;
 public interface IUserService
 {
     Task<string> RegisterUser(RegisterDto Model);
+    Task<string> Login(LoginDto login);
 }

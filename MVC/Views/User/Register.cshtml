@@ -20,16 +20,20 @@
             @using (@Html.BeginForm("Register", "User", FormMethod.Post, new { @id = "form", @class = "row form" }))
             {
                 <div class="form-group mb-2 col-md-12">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" placeholder="Nombre" name="Nombre" class="input-register ">
+                </div>
+                <div class="form-group mb-2 col-md-12">
                     <label for="email">Email</label>
-                    <input type="text" placeholder="Email" name="email" class="input-register ">
+                    <input type="text" placeholder="Email" name="Email" class="input-register ">
                 </div>
                 <div class="form-group mb-2 col-md-12">
                     <label for="password">Password</label>
-                    <input type="password" placeholder="Password" name="password" class="input-register ">
+                    <input type="password" placeholder="Password" name="Password" class="input-register ">
                 </div>
                 <div class="form-group mb-2 col-md-12">
                     <label for="password">Confirm Password</label>
-                    <input type="password" placeholder="Confirm Password" class="input-register " name="conf-password">
+                    <input type="password" placeholder="Confirm Password" class="input-register " name="PasswordConfirmation">
                 </div>
 
                 <input type="submit" class="input-submit">
