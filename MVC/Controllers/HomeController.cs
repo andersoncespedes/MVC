@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Domain.Entity;
 using Domain.Interface;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
 
@@ -10,10 +12,12 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly IUnitOfWork _unitOfWork;
-    public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
+    private readonly IHttpContextAccessor _contextAccessor;
+    public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork, IHttpContextAccessor contextAccessor)
     {
         _logger = logger;
         _unitOfWork = unitOfWork;
+        _contextAccessor = contextAccessor;
     }
 
     public async Task<IActionResult> Index()
@@ -31,5 +35,9 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    public async Task<IActionResult> LogOut(){
+        await _contextAccessor.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction("LoginView", "User");
     }
 }

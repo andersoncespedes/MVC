@@ -7,23 +7,34 @@ using MVC.Models;
 using AutoMapper;
 using System.Security.Cryptography;
 using Persistence.Data;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVC.Controllers;
+[Authorize]
 public class ProductoController : Controller
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
     private readonly ILogger<ProductoController> _logger;
+    private readonly IHttpContextAccessor _contextAccessor;
 
-    public ProductoController(ILogger<ProductoController> logger, IUnitOfWork unitOfWork, IMapper mapper)
+    public ProductoController(ILogger<ProductoController> logger, IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContext)
     {
         _logger = logger;
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _contextAccessor = httpContext;
 
     }
     public async Task<IActionResult> Index([FromQuery] Params Params){
-        
+        ClaimsPrincipal user = _contextAccessor.HttpContext.User;
+        string NombreUsuario = "";
+        if(!user.Identity.IsAuthenticated){
+            return RedirectToAction("Login", "User");
+        }
+        NombreUsuario = user.Claims.Where(e => e.Type == ClaimTypes.Name).Select(e => e.Value).SingleOrDefault();
+        ViewData["usuario"] = NombreUsuario;
         var labs = await _unitOfWork.Productos.Paginacion(Params.PageIndex, Params.PageSize, Params.Search);
         var map = _mapper.Map<List<ProductoDto>>(labs.registros);
         return View("Producto", new Pager<ProductoDto>(map, labs.totalRegistros, Params.PageIndex, Params.PageSize, Params.Search));

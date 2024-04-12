@@ -1,0 +1,36 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/MVC.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <div class="container-register">
+        <div class="container-form">
+            <h3>Register</h3>
+            @using (@Html.BeginForm("Login", "User", FormMethod.Post, new { @id = "form", @class = "row form" }))
+            {
+                <div class="form-group mb-2 col-md-12">
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="Email" name="Email" class="input-register ">
+                </div>
+                <div class="form-group mb-2 col-md-12">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password" name="Password" class="input-register ">
+                </div>
+                <input type="submit" class="input-submit">
+            }
+        </div>
+    </div>
+</body>
+
+</html>

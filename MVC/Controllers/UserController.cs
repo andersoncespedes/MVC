@@ -27,10 +27,17 @@ public class UserController : Controller
         
         return View("Register", null);
     }
+    public async Task<IActionResult> LoginView(){
+        
+        return View("Login", null);
+    }
      public async Task<IActionResult> Login(LoginDto login)
      {
         string validacion = await _service.Login(login);
-        return View("Register", null);
+        if(validacion == null){
+            return View("Register", null);;
+        }
+        return RedirectToAction("Index", "Home");
     }
 
 }

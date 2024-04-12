@@ -13,7 +13,13 @@ builder.Services.AddDbContext<DBContext>(options => {
     string ? conexion = builder.Configuration.GetConnectionString("SqlServerConn");
     options.UseSqlServer(conexion);
 });
-
+builder.Services.AddControllersWithViews(options => {
+    new ResponseCacheAttribute
+    {
+        NoStore = true,
+        Location = ResponseCacheLocation.None
+    };
+});
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 .AddCookie(options => {
     options.LoginPath = "/User/Login";
@@ -38,6 +44,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=User}/{action=LoginView}/{id?}");
 
 app.Run();
